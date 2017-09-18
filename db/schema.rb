@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170918061614) do
+ActiveRecord::Schema.define(version: 20170918070321) do
+
+  create_table "mailing_lists_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "mailing_list_id", null: false
+    t.bigint "user_id", null: false
+  end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -32,5 +37,4 @@ ActiveRecord::Schema.define(version: 20170918061614) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "products", "styles"
 end
