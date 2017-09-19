@@ -16,4 +16,9 @@
 #
 
 class Product < ApplicationRecord
+
+  default_scope { where.not(price: nil) }
+
+  scope :recent, lambda { where(["created_at >= ?", 1.year.ago]) }
+
 end
