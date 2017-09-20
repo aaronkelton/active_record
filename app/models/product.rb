@@ -42,6 +42,14 @@ class Product < ApplicationRecord
     "#{prefix} - #{ref_num}"
   end
 
+  def available_online?
+    true
+  end
+
+  def available_in_store?
+    true
+  end
+
   private
 
     def announce_save
