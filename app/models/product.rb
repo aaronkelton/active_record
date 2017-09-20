@@ -33,7 +33,7 @@ class Product < ApplicationRecord
   # def prefix
   #   category.prefix
   # end
-  delegate :prefix, to: :category
+  delegate :prefix, to: :category, allow_nil: true
 
   def full_ref_num
     "#{prefix} - #{ref_num}"
