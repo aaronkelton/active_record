@@ -2,11 +2,12 @@
 #
 # Table name: categories
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  prefix     :string(255)
+#  id             :integer          not null, primary key
+#  name           :string(255)
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  prefix         :string(255)
+#  products_count :integer          default(0)
 #
 
 require 'test_helper'
