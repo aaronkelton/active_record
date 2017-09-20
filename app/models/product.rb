@@ -30,6 +30,8 @@ class Product < ApplicationRecord
 
   scope :recent, lambda { where(["created_at >= ?", 1.year.ago]) }
 
+  after_save :announce_save
+
   # def prefix
   #   category.prefix
   # end
@@ -38,4 +40,10 @@ class Product < ApplicationRecord
   def full_ref_num
     "#{prefix} - #{ref_num}"
   end
+
+  private
+
+    def announce_save
+      puts "*** Saved! ***"
+    end
 end
