@@ -15,14 +15,12 @@ class Category < ApplicationRecord
   validates :name,   presence: true
   validates :prefix, presence: true
 
-  before_validation :add_default_prefix
+  before_validation :add_default_prefix, if: Proc.new { |cat| cat.prefix.blank? }
 
   private
 
     def add_default_prefix
-      if prefix.blank?
-        puts "*** Adding default prefix ***"
-        self.prefix = 'GEN'
-      end
+      puts "*** Adding default prefix ***"
+      self.prefix = 'GEN'
     end
 end
