@@ -24,7 +24,7 @@
 
 class Product < ApplicationRecord
 
-  belongs_to :category, class_name: 'Category', foreign_key: 'category_id', touch: true
+  belongs_to :category, class_name: 'Category', foreign_key: 'category_id', touch: true, counter_cache: true
 
   default_scope { order("name ASC") }
 
