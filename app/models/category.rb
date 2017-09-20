@@ -10,7 +10,7 @@
 #
 
 class Category < ApplicationRecord
-  has_many :products, lambda { order(:created_at) }
+  has_many :products, lambda { reorder(:created_at) }
 
   validates :name,   presence: true
   validates :prefix, presence: true
