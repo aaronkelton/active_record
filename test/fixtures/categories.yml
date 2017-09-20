@@ -8,6 +8,11 @@
 #  updated_at     :datetime         not null
 #  prefix         :string(255)
 #  products_count :integer          default(0)
+#  parent_id      :integer
+#
+# Indexes
+#
+#  index_categories_on_parent_id  (parent_id)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

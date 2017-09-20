@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920163639) do
+ActiveRecord::Schema.define(version: 20170920185929) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20170920163639) do
     t.datetime "updated_at", null: false
     t.string "prefix"
     t.integer "products_count", default: 0
+    t.integer "parent_id"
+    t.index ["parent_id"], name: "index_categories_on_parent_id"
   end
 
   create_table "mailing_lists_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
