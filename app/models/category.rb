@@ -17,6 +17,8 @@ class Category < ApplicationRecord
 
   before_validation :add_default_prefix, if: Proc.new { |cat| cat.prefix.blank? }
 
+  # around_save :benchmark
+
   private
 
     def add_default_prefix
