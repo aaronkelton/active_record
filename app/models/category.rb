@@ -10,7 +10,7 @@
 #
 
 class Category < ApplicationRecord
-  has_many :products, lambda { where('inventory > 0') }
+  has_many :products, lambda { where('inventory > 0') }, dependent: :destroy
 
   validates :name,   presence: true
   validates :prefix, presence: true
