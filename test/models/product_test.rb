@@ -14,6 +14,7 @@
 #  ref_num      :string(255)
 #  style_id     :integer
 #  category_id  :integer
+#  type         :string(255)
 #
 # Indexes
 #
