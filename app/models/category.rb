@@ -28,6 +28,8 @@ class Category < ApplicationRecord
 
   # around_save :benchmark
 
+  scope :roots, lambda { where(parent_id: nil) }
+
   private
 
     def add_default_prefix
