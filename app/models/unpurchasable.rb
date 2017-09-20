@@ -1,0 +1,2 @@
+class Unpurchasable < Product
+end

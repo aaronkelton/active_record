@@ -1,0 +1,2 @@
+class OnlineProduct < Product
+end

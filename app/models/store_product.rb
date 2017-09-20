@@ -1,0 +1,2 @@
+class StoreProduct < Product
+end
