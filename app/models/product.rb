@@ -30,4 +30,12 @@ class Product < ApplicationRecord
 
   scope :recent, lambda { where(["created_at >= ?", 1.year.ago]) }
 
+  # def prefix
+  #   category.prefix
+  # end
+  delegate :prefix, to: :category
+
+  def full_ref_num
+    "#{prefx} - #{ref_num}"
+  end
 end
